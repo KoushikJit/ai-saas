@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { DM_Mono } from 'next/font/google'
 import './globals.css'
+import Provider from '@/components/Provider'
 
-const inter = Inter({ subsets: ['latin'] })
+const dmM = DM_Mono({ subsets: ['latin'], weight: "400" })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,7 +17,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <Provider>
+        <body className={dmM.className}>{children}</body>
+      </Provider>
     </html>
   )
 }
